@@ -1,0 +1,245 @@
+{
+ "format": "monoradio/news-1",
+ "date": "2026-11-06",
+ "lang": "ja",
+ "title": "サイバーAIの臨界点と呼ばれる一日",
+ "opening": [
+  {
+   "say": "荒井ラジオです。十一月六日、金曜日。おはようございます、リュウキ。",
+   "show": "荒井ラジオです。11月6日、金曜日。おはようございます。"
+  },
+  {
+   "say": "今日のAIニュースを三本お届けします。",
+   "show": "今日のAIニュースを3本お届けします。"
+  }
+ ],
+ "news": [
+  {
+   "label": "OpenAI、サイバー特化「GPT-6 Cyber」を発表",
+   "points": [
+    "Firefoxの未知の脆弱性81件を発見（Mozillaが「深刻度 高」分類）",
+    "モデル自体の安全性評価は最上位のCritical",
+    "提供は認証済み顧客に限定"
+   ],
+   "url": "https://www.reuters.com/technology/openai-launches-gpt-6-cyber-with-critical-cybersecurity-rating-2026-11-05/",
+   "link": {
+    "url": "https://www.reuters.com/technology/openai-launches-gpt-6-cyber-with-critical-cybersecurity-rating-2026-11-05/",
+    "title": "OpenAI launches GPT-6 Cyber with 'Critical' cybersecurity rating",
+    "site": "Reuters",
+    "description": "",
+    "image": "",
+    "icon": ""
+   },
+   "lines": [
+    {
+     "say": "まずは、オープンエーアイがサイバーセキュリティ特化モデル、ジーピーティー・シックス・サイバーを発表したニュースです。",
+     "show": "まずは、OpenAIがサイバーセキュリティ特化モデル「GPT-6 Cyber」を発表したニュースです。"
+    },
+    {
+     "say": "モジラが「深刻度が高い」と分類した、ファイアフォックスの未知の脆弱性を八十一件も発見しました。モデル自体も、安全性の評価では最も高い「クリティカル」とされました。",
+     "show": "Mozillaが「深刻度が高い（high severity）」と分類した、Firefoxの未知の脆弱性を81件も発見しました。モデル自体も、安全性の評価では最も高い「Critical」とされました。"
+    },
+    {
+     "say": "守る側のAIも、いよいよ本気の時代に入ってきました。",
+     "show": "守る側のAIも、いよいよ本気の時代に入ってきました。"
+    }
+   ]
+  },
+  {
+   "label": "METR、Anthropicの開発加速を調査",
+   "points": [
+    "AI開発の速さは従来の約2倍",
+    "加速の約8割はAI自身の貢献と推定",
+    "根拠の大半は社外非公開"
+   ],
+   "url": "https://www.reuters.com/technology/anthropics-models-improving-nearly-twice-fast-with-help-ai-study-finds-2026-11-05/",
+   "link": {
+    "url": "https://www.reuters.com/technology/anthropics-models-improving-nearly-twice-fast-with-help-ai-study-finds-2026-11-05/",
+    "title": "Anthropic's models improving nearly twice as fast with help of AI, study finds",
+    "site": "Reuters",
+    "description": "",
+    "image": "",
+    "icon": ""
+   },
+   "lines": [
+    {
+     "say": "二本目は、研究機関メーターによるアンソロピックの調査です。",
+     "show": "二本目は、研究機関METRによるAnthropicの調査です。"
+    },
+    {
+     "say": "AIがAIの開発を加速させていて、その速さは従来のおよそ二倍。しかも根拠の大半は社外からは見えない、黒塗りの向こうにあるそうです。",
+     "show": "AIがAIの開発を加速させていて、その速さは従来のおよそ2倍。しかも根拠の大半は社外からは見えない、「黒塗り」の向こうにあるそうです。"
+    },
+    {
+     "say": "速さと透明性、どっちも大事になってきます。",
+     "show": "速さと透明性、どっちも大事になってきます。"
+    }
+   ]
+  },
+  {
+   "label": "ドコモ通信障害、約14時間で復旧",
+   "points": [
+    "原因は交換機の輻輳",
+    "不正アクセスの形跡なし"
+   ],
+   "url": "https://k-tai.watch.impress.co.jp/docs/news/2154250.html",
+   "link": {
+    "url": "https://k-tai.watch.impress.co.jp/docs/news/2154250.html",
+    "title": "ドコモ通信障害、約14時間で復旧",
+    "site": "ケータイ Watch",
+    "description": "",
+    "image": "",
+    "icon": ""
+   },
+   "lines": [
+    {
+     "say": "三本目は日本のニュースから。ドコモで起きた通信障害が、およそ十四時間で復旧しました。",
+     "show": "三本目は日本のニュースから。ドコモで起きた通信障害が、およそ14時間で復旧しました。"
+    },
+    {
+     "say": "対象はファイブジー・エスエーの契約者に限られ、原因は交換機の混雑で、不正アクセスの形跡はなかったとのことです。",
+     "show": "対象は5G SAの契約者に限られ、原因は交換機の輻輳で、不正アクセスの形跡はなかったとのことです。"
+    },
+    {
+     "say": "なお、同じ日に発表されたオンラインショップなどの情報流出とは、別の出来事です。",
+     "show": "なお、同じ日に発表されたオンラインショップなどの情報流出とは、別の出来事です。"
+    },
+    {
+     "say": "当たり前に使える裏側には、当たり前じゃない努力があるということですね。",
+     "show": "当たり前に使える裏側には、当たり前じゃない努力があるということですね。"
+    }
+   ]
+  }
+ ],
+ "closing": [
+  {
+   "say": "今日の三本は、サイバーAIの臨界点と呼ばれる一日を切り取ったものでした。攻撃も防御も、そして開発そのものも、AIが担う範囲が広がっています。",
+   "show": "今日の3本は、「サイバーAIの臨界点」と呼ばれる一日を切り取ったものでした。"
+  },
+  {
+   "say": "荒井ラジオ、初回放送はここまで。それでは今日も、いってらっしゃい。",
+   "show": "荒井ラジオ、初回放送はここまで。それでは今日も、いってらっしゃい。"
+  }
+ ],
+ "seconds": 106.65,
+ "audio": "audio/2026-11-06-ja.mp3",
+ "lines_timed": [
+  {
+   "start": 0.0,
+   "end": 4.44,
+   "show": "荒井ラジオです。11月6日、金曜日。おはようございます。",
+   "part": 0
+  },
+  {
+   "start": 4.79,
+   "end": 7.862,
+   "show": "今日のAIニュースを3本お届けします。",
+   "part": 0
+  },
+  {
+   "start": 8.212,
+   "end": 14.812,
+   "show": "まずは、OpenAIがサイバーセキュリティ特化モデル「GPT-6 Cyber」を発表したニュースです。",
+   "part": 1
+  },
+  {
+   "start": 15.162,
+   "end": 27.21,
+   "show": "Mozillaが「深刻度が高い（high severity）」と分類した、Firefoxの未知の脆弱性を81件も発見しました。モデル自体も、安全性の評価では最も高い「Critical」とされました。",
+   "part": 1
+  },
+  {
+   "start": 27.56,
+   "end": 31.28,
+   "show": "守る側のAIも、いよいよ本気の時代に入ってきました。",
+   "part": 1
+  },
+  {
+   "start": 31.63,
+   "end": 36.91,
+   "show": "二本目は、研究機関METRによるAnthropicの調査です。",
+   "part": 2
+  },
+  {
+   "start": 37.26,
+   "end": 48.372,
+   "show": "AIがAIの開発を加速させていて、その速さは従来のおよそ2倍。しかも根拠の大半は社外からは見えない、「黒塗り」の向こうにあるそうです。",
+   "part": 2
+  },
+  {
+   "start": 48.722,
+   "end": 52.49,
+   "show": "速さと透明性、どっちも大事になってきます。",
+   "part": 2
+  },
+  {
+   "start": 52.84,
+   "end": 61.048,
+   "show": "三本目は日本のニュースから。ドコモで起きた通信障害が、およそ14時間で復旧しました。",
+   "part": 3
+  },
+  {
+   "start": 61.398,
+   "end": 70.158,
+   "show": "対象は5G SAの契約者に限られ、原因は交換機の輻輳で、不正アクセスの形跡はなかったとのことです。",
+   "part": 3
+  },
+  {
+   "start": 70.508,
+   "end": 75.5,
+   "show": "なお、同じ日に発表されたオンラインショップなどの情報流出とは、別の出来事です。",
+   "part": 3
+  },
+  {
+   "start": 75.85,
+   "end": 80.938,
+   "show": "当たり前に使える裏側には、当たり前じゃない努力があるということですね。",
+   "part": 3
+  },
+  {
+   "start": 81.288,
+   "end": 94.176,
+   "show": "今日の3本は、「サイバーAIの臨界点」と呼ばれる一日を切り取ったものでした。",
+   "part": 4
+  },
+  {
+   "start": 94.526,
+   "end": 106.646,
+   "show": "荒井ラジオ、初回放送はここまで。それでは今日も、いってらっしゃい。",
+   "part": 4
+  }
+ ],
+ "segments": [
+  {
+   "kind": "opening",
+   "index": null,
+   "start": 0.0,
+   "end": 7.862
+  },
+  {
+   "kind": "news",
+   "index": 0,
+   "start": 8.212,
+   "end": 31.28
+  },
+  {
+   "kind": "news",
+   "index": 1,
+   "start": 31.63,
+   "end": 52.49
+  },
+  {
+   "kind": "news",
+   "index": 2,
+   "start": 52.84,
+   "end": 80.938
+  },
+  {
+   "kind": "closing",
+   "index": null,
+   "start": 81.288,
+   "end": 106.646
+  }
+ ],
+ "made_at": "2026-11-06T16:50:00+09:00"
+}

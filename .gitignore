@@ -1,0 +1,6 @@
+audio/
+.DS_Store
+__pycache__/
+
+# 荒井ラジオ作業ファイル（放送には使わない）
+build/

@@ -1,0 +1,35 @@
+{
+ "format": "myradio/station-1",
+ "name": "荒井ラジオ",
+ "description": "AIの今を、ペイオースが毎朝お届けするニュースラジオ。サイバー、研究、身近なITの話題を数本、数分で。",
+ "tagline": "AIニュースを、女神の声で",
+ "logo": null,
+ "url": "https://kokuryu3333-afk.github.io/arai-radio/",
+ "repo": "https://github.com/kokuryu3333-afk/arai-radio",
+ "language": "ja",
+ "languages": [
+  "ja"
+ ],
+ "schedule": {
+  "every": "day",
+  "time": "06:45",
+  "timezone": "Asia/Tokyo"
+ },
+ "episodes": "episodes.json",
+ "character": {
+  "pack": "character/character.json",
+  "thumbnail": "character/base.png",
+  "note": "お手本局「ものラジオ」のキャラクターを、テンプレートのライセンスに基づきそのまま使用しています（AI生成キャラクター）"
+ },
+ "credits": [
+  "声：Meta AI ボイス（ペイオース）",
+  "プレーヤー・仕組み：myradio テンプレート（ものラジオ / monoradio102）",
+  "天気：Open-Meteo"
+ ],
+ "caster": "ペイオース",
+ "audio": {
+  "dir": "audio",
+  "keep_days": 30
+ },
+ "weather": true
+}
