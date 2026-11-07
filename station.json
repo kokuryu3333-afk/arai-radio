@@ -1,7 +1,7 @@
 {
  "format": "myradio/station-1",
  "name": "荒井ラジオ",
- "description": "AIの今を、ペイオースが毎朝お届けするニュースラジオ。サイバー、研究、身近なITの話題を数本、数分で。",
+ "description": "AIの今を、ペイオースがお昼にお届けするニュースラジオ。サイバー、研究、身近なITの話題を数本、数分で。",
  "tagline": "AIニュースを、女神の声で",
  "logo": null,
  "url": "https://kokuryu3333-afk.github.io/arai-radio/",
@@ -19,7 +19,7 @@
  "character": {
   "pack": "character/character.json",
   "thumbnail": "character/base.png",
-  "note": "お手本局「ものラジオ」のキャラクターを、テンプレートのライセンスに基づきそのまま使用しています（AI生成キャラクター）"
+  "note": "ペイオース本人のキャラクターパックです（AI生成キャラクター）。口と目が声に合わせて動きます"
  },
  "credits": [
   "声：Meta AI ボイス（ペイオース）",

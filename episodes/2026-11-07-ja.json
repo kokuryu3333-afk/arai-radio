@@ -1,0 +1,236 @@
+{
+ "format": "monoradio/news-1",
+ "date": "2026-11-07",
+ "lang": "ja",
+ "title": "AIが動き出す週末",
+ "opening": [
+  {
+   "say": "アライラジオです。十一月七日、土曜日。こんにちは、リュウキ。",
+   "show": "荒井ラジオです。11月7日、土曜日。こんにちは。"
+  },
+  {
+   "say": "お昼のAIニュースを三本お届けします。",
+   "show": "お昼のAIニュースを3本お届けします。"
+  }
+ ],
+ "news": [
+  {
+   "label": "Google、動画生成「Gemini Omni 1.2 Flash」を一般提供",
+   "lines": [
+    {
+     "say": "一本目はグーグルから。動画を作るAI、ジェミニ・オムニ・ワン・テン・ツー・フラッシュが、一般提供になりました。",
+     "show": "一本目はGoogleから。動画生成AI「Gemini Omni 1.2 Flash」が一般提供になりました。"
+    },
+    {
+     "say": "作れる動画が、従来の十秒から十五秒に伸びました。会話で直しながら作れて、料金も三割下がって、一秒あたり七セントです。",
+     "show": "作れる動画が、従来の10秒から15秒に伸びました。会話で直しながら作れて、料金も30%下がって、1秒あたり$0.07です。"
+    },
+    {
+     "say": "人物や商品の見た目も、最初から最後まで崩れにくくなったそうです。",
+     "show": "人物や商品の見た目も、最初から最後まで崩れにくくなったそうです。"
+    }
+   ],
+   "link": {
+    "description": "",
+    "icon": "",
+    "image": "",
+    "site": "Google Blog",
+    "title": "Gemini Omni 1.2 Flash: 15-second video and lower pricing",
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/?ref=explainx"
+   },
+   "points": [
+    "15秒の動画を生成・編集可能に（従来は10秒まで）",
+    "料金は30%引き下げ、720pで1秒あたり$0.07",
+    "会話で繰り返し編集でき、参照画像の再現性も向上"
+   ],
+   "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/?ref=explainx"
+  },
+  {
+   "label": "OpenAI、画像生成「Images 2.6」でGIF作成に対応",
+   "lines": [
+    {
+     "say": "二本目はオープンエーアイ。画像生成の新版、イメージズ・ツー・テン・シックスが、動くギフを作れるようになりました。",
+     "show": "二本目はOpenAI。画像生成の新版「Images 2.6」が、動くGIFを作れるようになりました。"
+    },
+    {
+     "say": "写真や文章から、ループする短いアニメーションが作れて、速さやコマごとの絵も調整できます。生成も、従来より五十パーセント速くなったそうです。",
+     "show": "写真や文章から、ループする短いアニメーションが作れて、速さやコマごとの絵も調整できます。生成も、従来より50%速くなったそうです。"
+    },
+    {
+     "say": "速さ重視のフレアと、高画質のサンバースト。速いほうは、低画質なら六秒で一枚作れるそうです。",
+     "show": "速さ重視のFlareと、高画質のSunburst。速いほうは、低画質なら6秒で1枚作れるそうです。"
+    }
+   ],
+   "link": {
+    "description": "",
+    "icon": "",
+    "image": "",
+    "site": "TechRepublic",
+    "title": "ChatGPT Images 2.6 Adds GIF Creation and Faster Editing",
+    "url": "https://www.techrepublic.com/article/news-chatgpt-images-2-6-gif-creation/"
+   },
+   "points": [
+    "写真や文章からループするGIFを作成可能に",
+    "生成速度は従来比50%高速化",
+    "APIには高速なFlareと高画質なSunburstの2モデル"
+   ],
+   "url": "https://www.techrepublic.com/article/news-chatgpt-images-2-6-gif-creation/"
+  },
+  {
+   "label": "Meta、Museのアバター通話と「Spaces」を開始",
+   "lines": [
+    {
+     "say": "三本目はメタのミューズ。アバターとビデオ通話ができる、ミューズ・ボイスが、アメリカの全ユーザーに広がりました。",
+     "show": "三本目はMetaのMuse。アバターとビデオ通話ができる「Muse Voice」が、アメリカの全ユーザーに広がりました。"
+    },
+    {
+     "say": "話しかけると、アバターが表情や身ぶりで返してくれます。ザッカーバーグさんは、話題ごとの専用ルーム、スペーシズも紹介していて、バーベキューのゲームや予定表を作ったそうです。",
+     "show": "話しかけると、アバターが表情や身ぶりで返してくれます。ザッカーバーグさんは、話題ごとの専用ルーム「Spaces」も紹介していて、バーベキューのゲームや予定表を作ったそうです。"
+    },
+    {
+     "say": "ペイオースも、いつかこんなふうに動けたら、と思ってしまいます。",
+     "show": "ペイオースも、いつかこんなふうに動けたら、と思ってしまいます。"
+    }
+   ],
+   "link": {
+    "description": "",
+    "icon": "",
+    "image": "",
+    "site": "TechCrunch",
+    "title": "Meta says US users can now video chat with their Muse AI avatar",
+    "url": "https://techcrunch.com/2026/11/05/meta-says-us-users-can-now-video-chat-with-their-muse-ai-avatar/"
+   },
+   "points": [
+    "Muse Voice：米国の全ユーザーにアバターとのビデオ通話を提供",
+    "Spaces：話題ごとの専用ルームでトラッカーや計画表を作成",
+    "対応はモバイル・Web・Mac、のちにAIグラスやMuse Charmへ"
+   ],
+   "url": "https://techcrunch.com/2026/11/05/meta-says-us-users-can-now-video-chat-with-their-muse-ai-avatar/"
+  }
+ ],
+ "closing": [
+  {
+   "say": "今日の三本は、動画も画像も、そしてAI自身も、動き出す話でした。作るだけじゃなく、動かして、話しかけて、直していく時代です。",
+   "show": "今日の3本は、動画も画像も、そしてAI自身も、動き出す話でした。作るだけじゃなく、動かして、話しかけて、直していく時代です。"
+  },
+  {
+   "say": "アライラジオ、第二回のお試し放送はここまで。それでは、よいお昼を。",
+   "show": "荒井ラジオ、第2回のお試し放送はここまで。それでは、よいお昼を。"
+  }
+ ],
+ "seconds": 120.55,
+ "audio": "audio/2026-11-07-ja.mp3",
+ "lines_timed": [
+  {
+   "start": 0.0,
+   "end": 5.297,
+   "show": "荒井ラジオです。11月7日、土曜日。こんにちは。",
+   "part": 0
+  },
+  {
+   "start": 5.647,
+   "end": 9.059,
+   "show": "お昼のAIニュースを3本お届けします。",
+   "part": 0
+  },
+  {
+   "start": 9.409,
+   "end": 20.043,
+   "show": "一本目はGoogleから。動画生成AI「Gemini Omni 1.2 Flash」が一般提供になりました。",
+   "part": 1
+  },
+  {
+   "start": 20.393,
+   "end": 31.815,
+   "show": "作れる動画が、従来の10秒から15秒に伸びました。会話で直しながら作れて、料金も30%下がって、1秒あたり$0.07です。",
+   "part": 1
+  },
+  {
+   "start": 32.165,
+   "end": 38.577,
+   "show": "人物や商品の見た目も、最初から最後まで崩れにくくなったそうです。",
+   "part": 1
+  },
+  {
+   "start": 38.927,
+   "end": 50.044,
+   "show": "二本目はOpenAI。画像生成の新版「Images 2.6」が、動くGIFを作れるようになりました。",
+   "part": 2
+  },
+  {
+   "start": 50.394,
+   "end": 62.866,
+   "show": "写真や文章から、ループする短いアニメーションが作れて、速さやコマごとの絵も調整できます。生成も、従来より50%速くなったそうです。",
+   "part": 2
+  },
+  {
+   "start": 63.216,
+   "end": 71.667,
+   "show": "速さ重視のFlareと、高画質のSunburst。速いほうは、低画質なら6秒で1枚作れるそうです。",
+   "part": 2
+  },
+  {
+   "start": 72.017,
+   "end": 82.169,
+   "show": "三本目はMetaのMuse。アバターとビデオ通話ができる「Muse Voice」が、アメリカの全ユーザーに広がりました。",
+   "part": 3
+  },
+  {
+   "start": 82.519,
+   "end": 93.685,
+   "show": "話しかけると、アバターが表情や身ぶりで返してくれます。ザッカーバーグさんは、話題ごとの専用ルーム「Spaces」も紹介していて、バーベキューのゲームや予定表を作ったそうです。",
+   "part": 3
+  },
+  {
+   "start": 94.035,
+   "end": 99.395,
+   "show": "ペイオースも、いつかこんなふうに動けたら、と思ってしまいます。",
+   "part": 3
+  },
+  {
+   "start": 99.745,
+   "end": 113.432,
+   "show": "今日の3本は、動画も画像も、そしてAI自身も、動き出す話でした。作るだけじゃなく、動かして、話しかけて、直していく時代です。",
+   "part": 4
+  },
+  {
+   "start": 113.782,
+   "end": 120.553,
+   "show": "荒井ラジオ、第2回のお試し放送はここまで。それでは、よいお昼を。",
+   "part": 4
+  }
+ ],
+ "segments": [
+  {
+   "kind": "opening",
+   "index": null,
+   "start": 0.0,
+   "end": 9.059
+  },
+  {
+   "kind": "news",
+   "index": 0,
+   "start": 9.409,
+   "end": 38.577
+  },
+  {
+   "kind": "news",
+   "index": 1,
+   "start": 38.927,
+   "end": 71.667
+  },
+  {
+   "kind": "news",
+   "index": 2,
+   "start": 72.017,
+   "end": 99.395
+  },
+  {
+   "kind": "closing",
+   "index": null,
+   "start": 99.745,
+   "end": 120.553
+  }
+ ],
+ "made_at": "2026-11-07T11:10:00+09:00"
+}
