@@ -1,0 +1,48 @@
+name: Fix gh-pages audio
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: ghpages-dir
+          fetch-depth: 0
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main-dir
+          fetch-depth: 0
+      - name: Force-add audio MP3s to gh-pages
+        run: |
+          set -euo pipefail
+          cd ghpages-dir
+          git show e69393d:arai-radio-ghpages-20261107.zip > /tmp/publish.zip
+          unzip -l /tmp/publish.zip 'audio/*'
+          rm -rf /tmp/unpacked
+          mkdir -p /tmp/unpacked
+          unzip -o /tmp/publish.zip 'audio/*' -d /tmp/unpacked
+          cp -a /tmp/unpacked/audio .
+          ls -lh audio/
+          git add -f audio
+          git status --short
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Add audio MP3s to gh-pages (force-add; .gitignore excludes audio/)'
+          git push origin gh-pages
+          cd ../main-dir
+          rm -f .github/workflows/fix-audio.yml
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'No cleanup needed on main'
+          else
+            git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Remove temporary audio-fix workflow'
+            git push origin main
+          fi
