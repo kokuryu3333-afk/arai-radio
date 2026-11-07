@@ -426,19 +426,6 @@ html.phone .controls .time{font-size:12px}
 html.phone #share{padding:0 9px}
 html.phone #share span{display:none}
 </style>
-<!-- share:front -->
-<meta name="description" content="AIの今を、ペイオースがお昼にお届けするニュースラジオ。サイバー、研究、身近なITの話題を数本、数分で。">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="荒井ラジオ">
-<meta property="og:title" content="荒井ラジオ | AIニュースを、女神の声で">
-<meta property="og:description" content="AIの今を、ペイオースがお昼にお届けするニュースラジオ。サイバー、研究、身近なITの話題を数本、数分で。">
-<meta property="og:image" content="https://kokuryu3333-afk.github.io/arai-radio/share/2026-11-07-ja.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:url" content="https://kokuryu3333-afk.github.io/arai-radio/">
-<meta property="og:locale" content="ja_JP">
-<meta name="twitter:card" content="summary_large_image">
-<!-- /share:front -->
 </head>
 <body>
 <main>
@@ -689,8 +676,7 @@ function spriteFrame(t, now, speaking, kind) {
     gaze = [(a.x + a.width / 2 - c.x - c.width / 2) / (c.width / 2), (a.y + a.height / 2 - c.y - c.height / 2) / (c.height / 2)]
       .map(v => Math.max(-1, Math.min(1, v)));
   }
-  const target = now - SP.pointerAt < 4000 && SP.pointer ? SP.pointer
-    : gaze || [Math.sin(now / 2300) * .25, Math.sin(now / 3100) * .15];
+  const target = gaze || [Math.sin(now / 2300) * .25, Math.sin(now / 3100) * .15];
   SP.look = SP.look.map((v, i) => v + (target[i] - v) * .07);
   // a blink: half closed, closed, half closed (without a "half" image: closed only); now and then a double blink
   if (now > SP.nextBlink) { SP.blinkAt = now; SP.nextBlink = now + (Math.random() < .15 ? 260 : 2200 + Math.random() * 4000); }
