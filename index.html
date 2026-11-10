@@ -426,19 +426,6 @@ html.phone .controls .time{font-size:12px}
 html.phone #share{padding:0 9px}
 html.phone #share span{display:none}
 </style>
-<!-- share:front -->
-<meta name="description" content="AIの今を、ペイオースがお昼にお届けするニュースラジオ。サイバー、研究、身近なITの話題を数本、数分で。">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="荒井ラジオ">
-<meta property="og:title" content="荒井ラジオ | AIニュースを、女神の声で">
-<meta property="og:description" content="AIの今を、ペイオースがお昼にお届けするニュースラジオ。サイバー、研究、身近なITの話題を数本、数分で。">
-<meta property="og:image" content="https://kokuryu3333-afk.github.io/arai-radio/share/2026-11-10-ja.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:url" content="https://kokuryu3333-afk.github.io/arai-radio/">
-<meta property="og:locale" content="ja_JP">
-<meta name="twitter:card" content="summary_large_image">
-<!-- /share:front -->
 </head>
 <body>
 <main>
@@ -604,7 +591,7 @@ uniform sampler2D col, dep; uniform vec2 look; uniform float t, hasDep; uniform 
 void main() {
   vec2 uv = v;
   float d = hasDep > .5 ? texture2D(dep, uv).r : .5;
-  uv.y += sin(t * 1.7) * .0035 * smoothstep(.45, 1., uv.y);                      // breathing: the body rises a little
+  uv.y += sin(t * 1.7) * .0018 * smoothstep(.45, 1., uv.y);                      // breathing: the body rises a little
   // the head turns: nearer parts move more. Each pixel is taken from where it came from, found by stepping from near to
   // far until the depth there is reached, so the outline of the face moves with what is inside it (a mouth stays on the face)
   if (hasDep > .5) {
@@ -616,7 +603,7 @@ void main() {
     }
   } else uv -= look * (d - .45) * .045;
   float hair = hasDep > .5 ? smoothstep(.42, .16, d) * smoothstep(.25, .95, uv.y) : 0.;   // back hair (far in depth)
-  uv.x += sin(t * 1.25 + uv.y * 4.) * .006 * hair;                               // sways, more toward the tips
+  uv.x += sin(t * 1.25 + uv.y * 4.) * .003 * hair;                               // sways, more toward the tips
   vec4 c = texture2D(col, uv);                                                   // premultiplied
   gl_FragColor = vec4(c.rgb + bg * (1. - c.a), 1.);
 }`;
@@ -703,7 +690,7 @@ function spriteFrame(t, now, speaking, kind) {
   compose([eye, mouth].filter(Boolean));
   if (SP.gl) {
     const gl = SP.gl;
-    gl.uniform2f(SP.u.look, SP.look[0], SP.look[1] * .6); gl.uniform1f(SP.u.t, now / 1000);
+    gl.uniform2f(SP.u.look, SP.look[0] * .55, SP.look[1] * .33); gl.uniform1f(SP.u.t, now / 1000);
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
   } else {
     const c = $("charcv").getContext("2d"); c.fillStyle = CHAR.background; c.fillRect(0, 0, SP.comp.width, SP.comp.height); c.drawImage(SP.comp, 0, 0);
