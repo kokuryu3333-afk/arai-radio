@@ -1,0 +1,236 @@
+{
+ "format": "monoradio/news-1",
+ "date": "2026-11-10",
+ "lang": "ja",
+ "title": "モデルとロボットとチップの新顔",
+ "opening": [
+  {
+   "say": "アライラジオです。十一月十日、火曜日。こんにちは、リュウキ。",
+   "show": "荒井ラジオです。11月10日、火曜日。こんにちは。"
+  },
+  {
+   "say": "お昼のAIニュースを三本お届けします。",
+   "show": "お昼のAIニュースを3本お届けします。"
+  }
+ ],
+ "news": [
+  {
+   "label": "Anthropic、Claude Fable 5.2とMythos 5.2を発表",
+   "lines": [
+    {
+     "say": "一本目はアンスロピック。新しいAIモデル、クロード・フェイブル・ファイブ・テン・ツーと、ミソス・ファイブ・テン・ツーが発表されました。",
+     "show": "一本目はAnthropic。新しいAIモデル「Claude Fable 5.2」と「Claude Mythos 5.2」が発表されました。"
+    },
+    {
+     "say": "中身は同じ一つのモデルで、使い方が二つに分かれています。フェイブルは誰でも使える一般向け、ミソスはサイバーや生命科学の審査を通った組織だけが使えます。",
+     "show": "中身は同じ1つのモデルで、使い方が2つに分かれています。Fableは誰でも使える一般向け、Mythosはサイバーや生命科学の審査を通った組織だけが使えます。"
+    },
+    {
+     "say": "出力は前の版より最大で三割速く、料金も下がって、百万トークンあたり入力が八ドル、出力が四十ドルです。",
+     "show": "出力は前の版より最大で30%速く、料金も下がって、100万トークンあたり入力が$8、出力が$40です。"
+    }
+   ],
+   "link": {
+    "description": "",
+    "icon": "",
+    "image": "",
+    "site": "Reuters",
+    "title": "Anthropic unveils new Fable, Mythos models as competition heats up ahead of IPO",
+    "url": "https://www.reuters.com/technology/anthropic-unveils-new-fable-mythos-models-competition-heats-up-ahead-ipo-2026-11-09/"
+   },
+   "points": [
+    "同じモデルを、一般向けのFableと審査制のMythosに分けて提供",
+    "出力は5.1比で最大30%高速化",
+    "料金は100万トークンあたり入力$8・出力$40に値下げ"
+   ],
+   "url": "https://www.reuters.com/technology/anthropic-unveils-new-fable-mythos-models-competition-heats-up-ahead-ipo-2026-11-09/"
+  },
+  {
+   "label": "NVIDIA、ロボット基礎モデル「GR00T 2」を発表",
+   "lines": [
+    {
+     "say": "二本目はエヌビディア。ロボットの基礎モデル、グルート・ツーが、ロボット学習の学会コールで発表されました。",
+     "show": "二本目はNVIDIA。ロボットの基礎モデル「GR00T 2」が、ロボット学習の学会CoRLで発表されました。"
+    },
+    {
+     "say": "人の一人称動画、十万時間分を含むデータで学んでいて、五十の作業のうち四十を、見本なしで一度はこなせたそうです。",
+     "show": "人の一人称動画10万時間分を含むデータで学んでいて、50の作業のうち40を、見本なしで一度はこなせたそうです。"
+    },
+    {
+     "say": "見本を一つ見せると平均七十一パーセント、五つ見せると九十五パーセントの成功率だそうです。洗濯物の仕分けなどで試されています。",
+     "show": "見本を1つ見せると平均71%、5つ見せると95%の成功率だそうです。洗濯物の仕分けなどで試されています。"
+    }
+   ],
+   "link": {
+    "description": "",
+    "icon": "",
+    "image": "",
+    "site": "NVIDIA Blog",
+    "title": "Practice Makes Precise: At CoRL, NVIDIA and Partners Reveal How Robots Rehearse Delicate Work in Simulation",
+    "url": "https://blogs.nvidia.com/blog/robotics-simulation-advancements-corl/"
+   },
+   "points": [
+    "人の一人称動画10万時間を含むデータで学習",
+    "50の作業のうち40を見本なしで一度は達成",
+    "見本1つで平均71%、5つで95%の成功率"
+   ],
+   "url": "https://blogs.nvidia.com/blog/robotics-simulation-advancements-corl/"
+  },
+  {
+   "label": "Google、TPU 8txとTPU 8i Maxを追加",
+   "lines": [
+    {
+     "say": "三本目はグーグル。AI用のチップ、ティーピーユーの第八世代に、エイト・ティーエックスとエイト・アイ・マックスが加わりました。",
+     "show": "三本目はGoogle。AI用のチップ、TPUの第8世代に「TPU 8tx」と「TPU 8i Max」が加わりました。"
+    },
+    {
+     "say": "エイト・ティーエックスは、機密性の高い推論向け。データを処理中も守る仕組みで、銀行や政府などの利用を想定しています。",
+     "show": "TPU 8txは、機密性の高い推論向け。データを処理中も守る仕組みで、銀行や政府などの利用を想定しています。"
+    },
+    {
+     "say": "エイト・アイ・マックスは、チップを二つ一つのパッケージにして、計算もメモリも二倍に。ことし四つ目のティーピーユーだそうです。",
+     "show": "TPU 8i Maxは、チップを2つ1つのパッケージにして、計算もメモリも2倍に。今年4つ目のTPUだそうです。"
+    }
+   ],
+   "link": {
+    "description": "",
+    "icon": "",
+    "image": "",
+    "site": "Google Blog",
+    "title": "Introducing TPU 8tx and TPU 8i Max",
+    "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/?ref=explainx"
+   },
+   "points": [
+    "TPU 8txは機密性の高い推論向け、処理中もデータを保護",
+    "TPU 8i Maxは2チップ1パッケージで計算・メモリが2倍",
+    "第8世代は今年4システム目、グーグル初のペース"
+   ],
+   "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/?ref=explainx"
+  }
+ ],
+ "closing": [
+  {
+   "say": "今日の三本は、賢いモデル、動くロボット、そしてそれを支えるチップ。AIの進み方は、ひとつじゃないと感じます。",
+   "show": "今日の3本は、賢いモデル、動くロボット、そしてそれを支えるチップ。AIの進み方は、1つじゃないと感じます。"
+  },
+  {
+   "say": "アライラジオ、第三回のお昼の放送はここまで。それでは、よいお昼を。",
+   "show": "荒井ラジオ、第3回のお昼の放送はここまで。それでは、よいお昼を。"
+  }
+ ],
+ "seconds": 129.29,
+ "audio": "audio/2026-11-10-ja.mp3",
+ "lines_timed": [
+  {
+   "start": 0.0,
+   "end": 5.797,
+   "show": "荒井ラジオです。11月10日、火曜日。こんにちは。",
+   "part": 0
+  },
+  {
+   "start": 6.147,
+   "end": 9.895,
+   "show": "お昼のAIニュースを3本お届けします。",
+   "part": 0
+  },
+  {
+   "start": 10.245,
+   "end": 20.053,
+   "show": "一本目はAnthropic。新しいAIモデル「Claude Fable 5.2」と「Claude Mythos 5.2」が発表されました。",
+   "part": 1
+  },
+  {
+   "start": 20.403,
+   "end": 33.714,
+   "show": "中身は同じ1つのモデルで、使い方が2つに分かれています。Fableは誰でも使える一般向け、Mythosはサイバーや生命科学の審査を通った組織だけが使えます。",
+   "part": 1
+  },
+  {
+   "start": 34.064,
+   "end": 45.29,
+   "show": "出力は前の版より最大で30%速く、料金も下がって、100万トークンあたり入力が$8、出力が$40です。",
+   "part": 1
+  },
+  {
+   "start": 45.64,
+   "end": 55.136,
+   "show": "二本目はNVIDIA。ロボットの基礎モデル「GR00T 2」が、ロボット学習の学会CoRLで発表されました。",
+   "part": 2
+  },
+  {
+   "start": 55.486,
+   "end": 66.746,
+   "show": "人の一人称動画10万時間分を含むデータで学んでいて、50の作業のうち40を、見本なしで一度はこなせたそうです。",
+   "part": 2
+  },
+  {
+   "start": 67.096,
+   "end": 80.092,
+   "show": "見本を1つ見せると平均71%、5つ見せると95%の成功率だそうです。洗濯物の仕分けなどで試されています。",
+   "part": 2
+  },
+  {
+   "start": 80.442,
+   "end": 90.14,
+   "show": "三本目はGoogle。AI用のチップ、TPUの第8世代に「TPU 8tx」と「TPU 8i Max」が加わりました。",
+   "part": 3
+  },
+  {
+   "start": 90.49,
+   "end": 100.517,
+   "show": "TPU 8txは、機密性の高い推論向け。データを処理中も守る仕組みで、銀行や政府などの利用を想定しています。",
+   "part": 3
+  },
+  {
+   "start": 100.867,
+   "end": 110.462,
+   "show": "TPU 8i Maxは、チップを2つ1つのパッケージにして、計算もメモリも2倍に。今年4つ目のTPUだそうです。",
+   "part": 3
+  },
+  {
+   "start": 110.812,
+   "end": 121.676,
+   "show": "今日の3本は、賢いモデル、動くロボット、そしてそれを支えるチップ。AIの進み方は、1つじゃないと感じます。",
+   "part": 4
+  },
+  {
+   "start": 122.026,
+   "end": 129.286,
+   "show": "荒井ラジオ、第3回のお昼の放送はここまで。それでは、よいお昼を。",
+   "part": 4
+  }
+ ],
+ "segments": [
+  {
+   "kind": "opening",
+   "index": null,
+   "start": 0.0,
+   "end": 9.895
+  },
+  {
+   "kind": "news",
+   "index": 0,
+   "start": 10.245,
+   "end": 45.29
+  },
+  {
+   "kind": "news",
+   "index": 1,
+   "start": 45.64,
+   "end": 80.092
+  },
+  {
+   "kind": "news",
+   "index": 2,
+   "start": 80.442,
+   "end": 110.462
+  },
+  {
+   "kind": "closing",
+   "index": null,
+   "start": 110.812,
+   "end": 129.286
+  }
+ ],
+ "made_at": "2026-11-10T11:10:00+09:00"
+}
