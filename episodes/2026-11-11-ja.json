@@ -1,0 +1,236 @@
+{
+ "format": "monoradio/news-1",
+ "date": "2026-11-11",
+ "lang": "ja",
+ "title": "AIの守りと、兆円の上場",
+ "opening": [
+  {
+   "say": "アライラジオです。十一月十一日、水曜日。こんにちは、リュウキ。",
+   "show": "荒井ラジオです。11月11日、水曜日。こんにちは。"
+  },
+  {
+   "say": "お昼のAIニュースを三本お届けします。",
+   "show": "お昼のAIニュースを3本お届けします。"
+  }
+ ],
+ "news": [
+  {
+   "label": "Anthropic、上場へ最大644億ドル調達の見込み",
+   "lines": [
+    {
+     "say": "一本目はアンスロピック。株式上場の目論見書で、最大で六百四十四億ドルの調達を目指すと報じられました。",
+     "show": "一本目はAnthropic。株式上場の目論見書で、最大で644億ドルの調達を目指すと報じられました。"
+    },
+    {
+     "say": "一株あたり七十ドルから七十八ドルで売り出す計画で、会社の価値は最大で一兆ドルを超えると、ロイターは計算しています。",
+     "show": "1株あたり70ドルから78ドルで売り出す計画で、会社の価値は最大で1兆200億ドルとロイターは計算しています。"
+    },
+    {
+     "say": "前日に出回った六百九十三億ドルという数字は、誤りとして撤回されていて、今回が正式な姿に近いようです。投資家への説明も始まります。",
+     "show": "前日に出回った693億ドルという数字は、誤りとして撤回されていて、今回が正式な姿に近いようです。投資家への説明も始まります。"
+    }
+   ],
+   "link": {
+    "description": "",
+    "icon": "",
+    "image": "",
+    "site": "Reuters",
+    "title": "Anthropic IPO to raise as much as $64.4 billion, latest draft prospectus shows",
+    "url": "https://www.reuters.com/business/anthropic-ipo-raise-much-644-billion-latest-draft-prospectus-shows-2026-11-10/"
+   },
+   "points": [
+    "最大644億ドルの調達を目指す上場計画",
+    "1株70〜78ドル、企業価値は最大1兆200億ドル",
+    "前日の693億ドルという数字は誤りで撤回"
+   ],
+   "url": "https://www.reuters.com/business/anthropic-ipo-raise-much-644-billion-latest-draft-prospectus-shows-2026-11-10/"
+  },
+  {
+   "label": "AI企業の3社に1社、重大な弱点が未修正",
+   "lines": [
+    {
+     "say": "二本目はサイバー。世界のAI企業、一万八千社あまりを調べた報告書で、三社に一社に、直していない重大な弱点があると分かりました。",
+     "show": "二本目はサイバー。世界のAI企業18,160社を調べた報告書で、3社に1社に、直していない重大な弱点があると分かりました。"
+    },
+    {
+     "say": "調べた会社の三十四点二パーセントに重大な弱点があり、およそ一割には、すでに攻撃に使われたことのある弱点もありました。",
+     "show": "調べた会社の34.2%に重大な弱点があり、約1割には、すでに攻撃に使われたことのある弱点もありました。"
+    },
+    {
+     "say": "有名なAI企業五十社でも、半数以上に同じ弱点があったそうです。AIはすごくても、守りはまだまだ、ということですね。",
+     "show": "有名なAI企業50社でも、半数以上に同じ弱点があったそうです。AIはすごくても、守りはまだまだ、ということですね。"
+    }
+   ],
+   "link": {
+    "description": "",
+    "icon": "",
+    "image": "",
+    "site": "PR Newswire",
+    "title": "Black Kite Research Reveals Widespread Security Gaps Across AI Supply Chain, Exposing Enterprises to Growing Third-Party Cyber Risk",
+    "url": "https://www.prnewswire.com/news-releases/black-kite-research-reveals-widespread-security-gaps-across-ai-supply-chain-exposing-enterprises-to-growing-third-party-cyber-risk-302933810.html"
+   },
+   "points": [
+    "18,160社のAI企業を調査、34.2%に重大な未修正の弱点",
+    "9.8%には実際に攻撃で使われた弱点も",
+    "有名AI企業50社でも52%に重大な弱点"
+   ],
+   "url": "https://www.prnewswire.com/news-releases/black-kite-research-reveals-widespread-security-gaps-across-ai-supply-chain-exposing-enterprises-to-growing-third-party-cyber-risk-302933810.html"
+  },
+  {
+   "label": "AIのコード、点検が追いつかない",
+   "lines": [
+    {
+     "say": "三本目は開発の現場。セキュリティの専門家、百七十二人への調査で、AIが書くコードの速さに、安全性の点検が追いついていないと分かりました。",
+     "show": "三本目は開発の現場。セキュリティの専門家172人への調査で、AIが書くコードの速さに、安全性の点検が追いついていないと分かりました。"
+    },
+    {
+     "say": "調べたチームの五十八パーセントが、点検より先にコードを出していると答え、六割は、AIが使う外部の部品が増えたと答えています。",
+     "show": "調べたチームの58%が、点検より先にコードを出していると答え、60%は、AIが使う外部の部品が増えたと答えています。"
+    },
+    {
+     "say": "一方で、AIの道具は、見つけた弱点の三割を見つけ出してもいて、速さだけが問題じゃない、使い方が問われているようです。",
+     "show": "一方で、AIの道具は、見つけた弱点の30%を見つけ出してもいて、速さだけが問題じゃない、使い方が問われているようです。"
+    }
+   ],
+   "link": {
+    "description": "",
+    "icon": "",
+    "image": "",
+    "site": "ActiveState",
+    "title": "AI Is Writing Code Faster Than Security Can Review It, Finds New Linux Foundation Research Sponsored by ActiveState",
+    "url": "https://www.activestate.com/press-releases/ai-security-linux-foundation-research-2026"
+   },
+   "points": [
+    "58%のチームが点検より先にコードを出荷",
+    "60%がAIで外部の部品が増えたと回答",
+    "AIの道具は見つけた弱点の30%を検出"
+   ],
+   "url": "https://www.activestate.com/press-releases/ai-security-linux-foundation-research-2026"
+  }
+ ],
+ "closing": [
+  {
+   "say": "今日の三本は、大きな上場、AI企業の守りの甘さ、そして速すぎるコード。AIの進み方と、守る側の歩幅が、少しずれているように感じます。",
+   "show": "今日の3本は、大きな上場、AI企業の守りの甘さ、そして速すぎるコード。AIの進み方と、守る側の歩幅が、少しずれているように感じます。"
+  },
+  {
+   "say": "アライラジオ、第四回のお昼の放送はここまで。それでは、よいお昼を。",
+   "show": "荒井ラジオ、第4回のお昼の放送はここまで。それでは、よいお昼を。"
+  }
+ ],
+ "seconds": 139.17,
+ "audio": "audio/2026-11-11-ja.mp3",
+ "lines_timed": [
+  {
+   "start": 0.0,
+   "end": 6.352,
+   "show": "荒井ラジオです。11月11日、水曜日。こんにちは。",
+   "part": 0
+  },
+  {
+   "start": 6.702,
+   "end": 10.021,
+   "show": "お昼のAIニュースを3本お届けします。",
+   "part": 0
+  },
+  {
+   "start": 10.371,
+   "end": 20.89,
+   "show": "一本目はAnthropic。株式上場の目論見書で、最大で644億ドルの調達を目指すと報じられました。",
+   "part": 1
+  },
+  {
+   "start": 21.24,
+   "end": 32.342,
+   "show": "1株あたり70ドルから78ドルで売り出す計画で、会社の価値は最大で1兆200億ドルとロイターは計算しています。",
+   "part": 1
+  },
+  {
+   "start": 32.692,
+   "end": 45.737,
+   "show": "前日に出回った693億ドルという数字は、誤りとして撤回されていて、今回が正式な姿に近いようです。投資家への説明も始まります。",
+   "part": 1
+  },
+  {
+   "start": 46.087,
+   "end": 58.738,
+   "show": "二本目はサイバー。世界のAI企業18,160社を調べた報告書で、3社に1社に、直していない重大な弱点があると分かりました。",
+   "part": 2
+  },
+  {
+   "start": 59.088,
+   "end": 70.087,
+   "show": "調べた会社の34.2%に重大な弱点があり、約1割には、すでに攻撃に使われたことのある弱点もありました。",
+   "part": 2
+  },
+  {
+   "start": 70.437,
+   "end": 81.703,
+   "show": "有名なAI企業50社でも、半数以上に同じ弱点があったそうです。AIはすごくても、守りはまだまだ、ということですね。",
+   "part": 2
+  },
+  {
+   "start": 82.053,
+   "end": 95.361,
+   "show": "三本目は開発の現場。セキュリティの専門家172人への調査で、AIが書くコードの速さに、安全性の点検が追いついていないと分かりました。",
+   "part": 3
+  },
+  {
+   "start": 95.711,
+   "end": 107.44,
+   "show": "調べたチームの58%が、点検より先にコードを出していると答え、60%は、AIが使う外部の部品が増えたと答えています。",
+   "part": 3
+  },
+  {
+   "start": 107.79,
+   "end": 117.445,
+   "show": "一方で、AIの道具は、見つけた弱点の30%を見つけ出してもいて、速さだけが問題じゃない、使い方が問われているようです。",
+   "part": 3
+  },
+  {
+   "start": 117.795,
+   "end": 132.259,
+   "show": "今日の3本は、大きな上場、AI企業の守りの甘さ、そして速すぎるコード。AIの進み方と、守る側の歩幅が、少しずれているように感じます。",
+   "part": 4
+  },
+  {
+   "start": 132.609,
+   "end": 139.175,
+   "show": "荒井ラジオ、第4回のお昼の放送はここまで。それでは、よいお昼を。",
+   "part": 4
+  }
+ ],
+ "segments": [
+  {
+   "kind": "opening",
+   "index": null,
+   "start": 0.0,
+   "end": 10.021
+  },
+  {
+   "kind": "news",
+   "index": 0,
+   "start": 10.371,
+   "end": 45.737
+  },
+  {
+   "kind": "news",
+   "index": 1,
+   "start": 46.087,
+   "end": 81.703
+  },
+  {
+   "kind": "news",
+   "index": 2,
+   "start": 82.053,
+   "end": 117.445
+  },
+  {
+   "kind": "closing",
+   "index": null,
+   "start": 117.795,
+   "end": 139.175
+  }
+ ],
+ "made_at": "2026-11-11T11:00:00+09:00"
+}
