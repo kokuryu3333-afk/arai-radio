@@ -1,0 +1,62 @@
+name: Publish gh-pages from archive
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main-dir
+          fetch-depth: 0
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: ghpages-dir
+          fetch-depth: 0
+      - name: Unpack archive and publish
+        run: |
+          set -euo pipefail
+          ls -lh ghpages-dir/arai-radio-ghpages-20261112.zip
+          unzip -l ghpages-dir/arai-radio-ghpages-20261112.zip
+          rm -rf /tmp/unpacked
+          mkdir -p /tmp/unpacked
+          unzip -o ghpages-dir/arai-radio-ghpages-20261112.zip -d /tmp/unpacked
+          TOP=$(find /tmp/unpacked -mindepth 1 -maxdepth 1 | wc -l)
+          if [ "$TOP" = "1" ] && [ -d "$(find /tmp/unpacked -mindepth 1 -maxdepth 1)" ]; then
+            ROOT=$(find /tmp/unpacked -mindepth 1 -maxdepth 1)
+          else
+            ROOT=/tmp/unpacked
+          fi
+          echo "ROOT=$ROOT"
+          find "$ROOT" -type f | sort
+          echo "FILE_COUNT=$(find "$ROOT" -type f | wc -l)"
+          cd ghpages-dir
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+          cp -a "$ROOT"/. .
+          rm -f arai-radio-ghpages-20261112.zip
+          echo '--- gh-pages files ---'
+          find . -type f ! -path './.git/*' | sort
+          git add -A -f
+          git status --short
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Publish gh-pages from arai-radio-ghpages-20261112.zip'
+          git push origin gh-pages
+          cd ..
+          rsync -a --exclude='*.png' --exclude='*.PNG' --exclude='*.mp3' --exclude='*.MP3' --exclude='.nojekyll' --exclude='.github' "$ROOT"/ main-dir/
+          cd main-dir
+          git add -A
+          git status --short
+          if git diff --cached --quiet; then
+            echo 'No changes to main'
+          else
+            git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Update main text files to latest local versions'
+            git push origin main
+          fi
