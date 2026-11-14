@@ -591,7 +591,14 @@ uniform sampler2D col, dep; uniform vec2 look; uniform float t, hasDep; uniform 
 void main() {
   vec2 uv = v;
   float d = hasDep > .5 ? texture2D(dep, uv).r : .5;
-  uv.y += sin(t * 1.7) * .0018 * smoothstep(.45, 1., uv.y);                      // breathing: the body rises a little
+  // a slow whole-body sway anchored at the bottom: a gentle bob and tilt that move the head, scarf and shoulders
+  // together, so the life of the picture is not all in the mouth. A pixel or two at most — a bigger sway warped
+  // her face before and had to be halved again (2026-11)
+  float swayW = smoothstep(1., .15, uv.y);
+  uv.y += sin(t * .8) * .0021 * swayW;
+  vec2 piv = vec2(.5, 1.); float ang = sin(t * .53 + 1.3) * .0018;
+  vec2 q = uv - piv; float ca = cos(ang), sa = sin(ang); uv = piv + mat2(ca, -sa, sa, ca) * q;
+  uv.y += sin(t * 1.7) * .0021 * smoothstep(.45, 1., uv.y);                      // breathing: the body rises a little
   // the head turns: nearer parts move more. Each pixel is taken from where it came from, found by stepping from near to
   // far until the depth there is reached, so the outline of the face moves with what is inside it (a mouth stays on the face)
   if (hasDep > .5) {
@@ -610,6 +617,17 @@ void main() {
 // an image of the character; one retry, since a busy server can drop one of the many small requests
 const loadImg = (src, tries = 2) => new Promise((ok, ng) => { const i = new Image(); i.onload = () => ok(i); i.onerror = ng; i.src = charUrl(src); })
   .catch(e => tries > 1 ? loadImg(src, tries - 1) : Promise.reject(e));
+// a mouth part is pasted over the base, and a hard rim makes the patch read as a separate moving piece (a mask,
+// the viewer said): fade its alpha out over the outer tenth or so of the part, so only the mouth itself changes
+function feathered(img) {
+  const f = Math.max(4, Math.min(16, Math.round(Math.min(img.naturalWidth, img.naturalHeight) * .1)));
+  const c = Object.assign(document.createElement("canvas"), { width: img.naturalWidth, height: img.naturalHeight });
+  const x = c.getContext("2d"); x.drawImage(img, 0, 0);
+  x.globalCompositeOperation = "destination-out";
+  const edge = (x0, y0, x1, y1) => { const g = x.createLinearGradient(x0, y0, x1, y1); g.addColorStop(0, "rgba(0,0,0,1)"); g.addColorStop(1, "rgba(0,0,0,0)"); x.fillStyle = g; x.fillRect(0, 0, c.width, c.height); };
+  edge(0, 0, 0, f); edge(0, c.height, 0, c.height - f); edge(0, 0, f, 0); edge(c.width, 0, c.width - f, 0);
+  return c;
+}
 async function initSprites() {
   const [w, h] = CHAR.size;
   SP.base = await loadImg(CHAR.base);
@@ -617,7 +635,7 @@ async function initSprites() {
   SP.parts = {};
   // a part that does not load is left out (that eye or mouth just does not change), not the whole character
   await Promise.all(Object.entries(CHAR.parts || {}).map(async ([k, p]) => {
-    const img = await loadImg(p.src).catch(() => null); if (img) SP.parts[k] = { img, x: p.x, y: p.y }; }));
+    const img = await loadImg(p.src).catch(() => null); if (img) SP.parts[k] = { img: k.includes("mouth") ? feathered(img) : img, x: p.x, y: p.y }; }));
   SP.comp = Object.assign(document.createElement("canvas"), { width: w, height: h });
   SP.cx = SP.comp.getContext("2d");
   const cv = $("charcv"); cv.width = w; cv.height = h; cv.hidden = false;
@@ -660,7 +678,13 @@ function spriteFrame(t, now, speaking, kind) {
   let want = 0;
   if (speaking) {
     const lv = ep?.mouth, live = voiceLevel();
-    want = live !== null ? live : lv ? +(lv.levels[Math.floor(t * lv.fps)] || 0) : (Math.floor(now / 160) % 3 === 0 ? 1 : 2);
+    if (live !== null) want = live;
+    else if (lv) {
+      // a lone loud frame only half opens her mouth: full open is for a peak that lasts (2026-11-14, she gaped)
+      const i = Math.floor(t * lv.fps), s = +(lv.levels[i] || 0);
+      want = s === 2 && +(lv.levels[i - 1] || 0) !== 2 && +(lv.levels[i + 1] || 0) !== 2 ? 1 : s;
+    }
+    else want = Math.floor(now / 200) % 4 === 3 ? 2 : 1;
   }
   // change shape only after holding the current one a while, and one step at a time (closed <-> half <-> open)
   if (want !== SP.mouth && now - SP.mouthAt >= MOUTH_HOLD) { SP.mouth += Math.sign(want - SP.mouth); SP.mouthAt = now; }
@@ -678,10 +702,11 @@ function spriteFrame(t, now, speaking, kind) {
   }
   const target = gaze || [Math.sin(now / 2300) * .25, Math.sin(now / 3100) * .15];
   SP.look = SP.look.map((v, i) => v + (target[i] - v) * .07);
-  // a blink: half closed, closed, half closed (without a "half" image: closed only); now and then a double blink
-  if (now > SP.nextBlink) { SP.blinkAt = now; SP.nextBlink = now + (Math.random() < .15 ? 260 : 2200 + Math.random() * 4000); }
+  // a blink: half closed, closed, half closed (without a "half" image: closed only); now and then a double blink.
+  // 260 ms in all (was 170): at 40 ms the half-closed frames went by in two frames and the blink read as a flicker
+  if (now > SP.nextBlink) { SP.blinkAt = now; SP.nextBlink = now + (Math.random() < .15 ? 340 : 2200 + Math.random() * 4000); }
   const bt = now - (SP.blinkAt ?? -1e9), half = CHAR.eye?.half;
-  const blinkEye = bt < 40 ? half || CHAR.eye?.blink : bt < 120 ? CHAR.eye?.blink : bt < 170 ? half : null;
+  const blinkEye = bt < 60 ? half || CHAR.eye?.blink : bt < 190 ? CHAR.eye?.blink : bt < 260 ? half : null;
   // she smiles for the goodbye: an expression names an eye and / or a mouth image ({eye, mouth}; older packs: [eye, mouth])
   const ex = kind === "closing" ? CHAR.expressions?.smile : null;
   const exEye = Array.isArray(ex) ? ex[0] : ex?.eye, exMouth = Array.isArray(ex) ? ex[1] : ex?.mouth;
@@ -943,7 +968,7 @@ function voiceLevel() {
   VOICE.db += (now - VOICE.db) * (now > VOICE.db ? .6 : .3);   // rises quickly, falls slowly: no flutter
   VOICE.ref = Math.max(VOICE.db, VOICE.ref - .02);   // follows the loud parts, sinks slowly in the quiet
   const db = VOICE.db;
-  return db < VOICE.ref - 22 ? 0 : db < VOICE.ref - 5 ? 1 : 2;
+  return db < VOICE.ref - 22 ? 0 : db < VOICE.ref - 2.5 ? 1 : 2;   // full open only near the peak: at -5 dB she gaped at almost every syllable
 }
 
 // ---------- sound on / off and volume (remembered in this browser) ----------
