@@ -425,7 +425,58 @@ html.phone .sound input{display:none}
 html.phone .controls .time{font-size:12px}
 html.phone #share{padding:0 9px}
 html.phone #share span{display:none}
+/* ===== skins (2026-11-17): a listener-facing skin switch; the stage keeps its studio look,
+   a skin restyles the page around it (frame, controls, panels below) ===== */
+#skin{flex:none;height:34px;padding:0 8px;border:1px solid var(--line);border-radius:999px;background:none;color:var(--muted);
+  font:600 13px var(--jp);cursor:pointer}
+#skin:hover{border-color:var(--yellow);color:var(--yellow)}
+#skin:focus-visible{outline:2px solid var(--yellow);outline-offset:1px}
+/* --- skin "xp": a Windows XP homage — Luna-blue taskbar controls, a green start-like play
+   button, silver window panels below the stage, and Bliss (sky and hill) outside the frame --- */
+html[data-skin="xp"] body{background:
+  radial-gradient(130% 46% at 50% 112%,#79b657 0 55%,rgba(121,182,87,0) 56%),
+  linear-gradient(180deg,#1d4fba 0%,#4a8ef7 42%,#8fc0f9 78%,#bcd9fb 100%) fixed #4a8ef7}
+html[data-skin="xp"] #frame{border:3px solid #0831d9;border-radius:12px 12px 6px 6px;box-shadow:0 22px 55px rgba(0,25,90,.5)}
+html[data-skin="xp"] .controls{background:linear-gradient(180deg,#5a93f8 0%,#2f6bf0 12%,#245edb 45%,#1d4fc4 90%,#1941a5 100%);
+  border:1px solid #0f2f7a;border-radius:10px;padding:10px 14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.55),0 10px 26px rgba(0,25,90,.35)}
+html[data-skin="xp"] .controls button.pp{background:linear-gradient(180deg,#7cc46a 0%,#4da53e 45%,#2f7d24 55%,#3c8f31 100%);
+  border:1px solid #1d5c14;border-radius:6px 16px 16px 6px;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),2px 2px 6px rgba(0,40,0,.35)}
+html[data-skin="xp"] .controls button.pp svg{fill:#fff}
+html[data-skin="xp"] .controls #seek{accent-color:#8fd06e}
+html[data-skin="xp"] .controls .time{color:#fff;font-weight:700;text-shadow:1px 1px 2px rgba(0,0,60,.65)}
+html[data-skin="xp"] .controls #rate{border-color:rgba(255,255,255,.55);color:#fff}
+html[data-skin="xp"] #share{border-color:rgba(255,255,255,.55);color:#fff}
+html[data-skin="xp"] #share:hover{border-color:#ffe97a;color:#ffe97a}
+html[data-skin="xp"] #skin{background:linear-gradient(180deg,#f8f6ec,#d8d2bd);border:2px outset #f5f4ec;border-radius:6px;color:#111}
+html[data-skin="xp"] #skin:hover{color:#111}
+html[data-skin="xp"] .chan,html[data-skin="xp"] details{background:#ece9d8;border:2px outset #f5f4ec;border-radius:6px;
+  padding:10px 14px;color:#14264f;font-family:Tahoma,"MS UI Gothic","Hiragino Sans",sans-serif}
+html[data-skin="xp"] .chan{margin:14px 0 6px}
+html[data-skin="xp"] .chan .av{background:#fff;border:2px inset #f5f4ec}
+html[data-skin="xp"] .chan .av b{color:#245edb}
+html[data-skin="xp"] .chan small{color:#555}
+html[data-skin="xp"] #now{background:rgba(236,233,216,.92);border:2px outset #f5f4ec;border-radius:6px;padding:8px 12px;color:#14264f}
+html[data-skin="xp"] summary{color:#0831d9;font-weight:700}
+html[data-skin="xp"] .source{color:#222}
+html[data-skin="xp"] .talkNote{color:#555}
+html[data-skin="xp"] h1{color:#fff;font-weight:700;text-shadow:1px 1px 3px rgba(0,20,80,.8)}
+html[data-skin="xp"] .eps a{background:#ece9d8;border:2px outset #f5f4ec;border-radius:6px;margin-bottom:6px;color:#14264f}
+html[data-skin="xp"] .eps a:hover{background:#f8f6ec}
+html[data-skin="xp"] .eps a.cur{background:#d7e5fd}
+html[data-skin="xp"] .eps .d,html[data-skin="xp"] .eps .len{color:#555}
+html[data-skin="xp"] .links .item{background:#ece9d8;border:2px outset #f5f4ec;border-radius:6px;margin-bottom:8px;color:#14264f}
+html[data-skin="xp"] .links .pts span{color:#333}
+html[data-skin="xp"] .links small{color:#555}
+html[data-skin="xp"] .links .d{color:#245edb}
+html[data-skin="xp"] .links .jump i{color:#555}
+html[data-skin="xp"] .links .jump:hover b{color:#0831d9}
+html[data-skin="xp"] .links .srcs a:hover small{color:#0831d9}
+html[data-skin="xp"] footer{color:#fff;text-shadow:1px 1px 2px rgba(0,20,80,.8)}
+html[data-skin="xp"] footer a{color:#ffe97a}
 </style>
+<script>/* skin: apply the saved (or ?skin=) choice before first paint */
+try{var sk=new URLSearchParams(location.search).get("skin")||localStorage.getItem("arai-radio-skin");
+if(sk&&sk!=="default")document.documentElement.dataset.skin=sk}catch(e){}</script>
 <!-- share:front -->
 <meta name="description" content="AIの今を、ペイオースがお昼にお届けするニュースラジオ。サイバー、研究、身近なITの話題を数本、数分で。">
 <meta property="og:type" content="website">
@@ -478,6 +529,7 @@ html.phone #share span{display:none}
     <button id="rate" aria-label="再生速度">1×</button>
     <div class="sharewrap"><div id="shareMenu" role="menu" hidden><button data-act="native" role="menuitem"></button><button data-act="link" role="menuitem"></button><button data-act="embed" role="menuitem"></button></div>
     <button id="share" hidden aria-haspopup="menu"><svg viewBox="0 0 24 24"><path d="M18 16.1c-.8 0-1.5.3-2 .8l-7.1-4.2c.1-.2.1-.5.1-.7s0-.5-.1-.7L16 7.2c.5.5 1.2.8 2 .8 1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3c0 .2 0 .5.1.7L8 9.8C7.5 9.3 6.8 9 6 9c-1.7 0-3 1.3-3 3s1.3 3 3 3c.8 0 1.5-.3 2-.8l7.1 4.2c-.1.2-.1.4-.1.6 0 1.6 1.3 2.9 2.9 2.9s2.9-1.3 2.9-2.9-1.2-2.9-2.8-2.9z"/></svg><span></span></button></div>
+    <select id="skin" aria-label="スキン" title="スキン"><option value="default">スキン：標準</option><option value="xp">スキン：XP</option></select>
   </div>
   <div class="mnav" id="mnav"></div>
   <div class="chan"><span class="av"><i class="logo"></i><b id="avch"></b></span><div class="nm"><b id="cname"></b><small id="ctag"></small></div>
@@ -1302,6 +1354,13 @@ async function init() {
   load(eps.some(e => e.date === want) ? want : eps[0].date, pref);
 }
 init();
+</script>
+<script>/* skin switch: remember the listener's choice in this browser */
+(()=>{const sel=document.getElementById("skin");if(!sel)return;
+sel.value=document.documentElement.dataset.skin==="xp"?"xp":"default";
+sel.addEventListener("change",()=>{const v=sel.value;
+try{localStorage.setItem("arai-radio-skin",v)}catch(e){}
+if(v==="default")delete document.documentElement.dataset.skin;else document.documentElement.dataset.skin=v;});})();
 </script>
 </body>
 </html>
