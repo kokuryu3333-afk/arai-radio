@@ -25,11 +25,14 @@ jobs:
       - name: Unpack archive and publish
         run: |
           set -euo pipefail
-          ls -lh ghpages-dir/arai-radio-ghpages-20261120.zip
-          unzip -l ghpages-dir/arai-radio-ghpages-20261120.zip
+          cat ghpages-dir/arai-radio-ghpages-20261120.zip.part-aa ghpages-dir/arai-radio-ghpages-20261120.zip.part-ab > /tmp/arai-radio-ghpages-20261120.zip
+          ls -lh /tmp/arai-radio-ghpages-20261120.zip
+      
+          unzip -l /tmp/arai-radio-ghpages-20261120.zip
           rm -rf /tmp/unpacked
           mkdir -p /tmp/unpacked
-          unzip -o ghpages-dir/arai-radio-ghpages-20261120.zip -d /tmp/unpacked
+    
+          unzip -o /tmp/arai-radio-ghpages-20261120.zip -d /tmp/unpacked
           TOP=$(find /tmp/unpacked -mindepth 1 -maxdepth 1 | wc -l)
           if [ "$TOP" = "1" ] && [ -d "$(find /tmp/unpacked -mindepth 1 -maxdepth 1)" ]; then
             ROOT=$(find /tmp/unpacked -mindepth 1 -maxdepth 1)
@@ -42,7 +45,7 @@ jobs:
           cd ghpages-dir
           find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
           cp -a "$ROOT"/. .
-          rm -f arai-radio-ghpages-20261120.zip
+          rm -f arai-radio-ghpages-20261120.zip.part-aa arai-radio-ghpages-20261120.zip.part-ab
           echo '--- gh-pages files ---'
           find . -type f ! -path './.git/*' | sort
           git add -A -f
