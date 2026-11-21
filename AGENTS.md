@@ -57,3 +57,7 @@
 2. giscus のアプリ（https://github.com/apps/giscus）を、このリポジトリだけに入れる
 3. https://giscus.app でリポジトリとカテゴリの ID を調べ、`station.json` の `comments.giscus` に書く
 4. `giscus.json` の `origins` を自分の公開先（`https://<you>.github.io`）にする。ほかのサイトが、このリポジトリにコメントを書きこめないようにするため
+
+## 公開ZIPの分割（2026-11-20 リュウキ決定）
+- 公開はブラウザ経由のZIPアップロード方式（git push は使わない）。GitHub Web UI の上限は1ファイル25MB。
+- ZIPが25MBを超える場合は分割アップロードを標準手順とする（2026-11-20 第13回で27.3MB→2分割、連結SHA256一致を確認して公開）。
