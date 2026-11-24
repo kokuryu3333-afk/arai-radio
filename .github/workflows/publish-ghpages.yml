@@ -25,13 +25,13 @@ jobs:
       - name: Unpack archive and publish
         run: |
           set -euo pipefail
-          ls -lh ghpages-dir/arai-radio-ghpages-20261123.zip.part-*
-          cat ghpages-dir/arai-radio-ghpages-20261123.zip.part-* > /tmp/arai-radio-ghpages-20261123.zip
-          echo 'a0f31883caec81a44cf34f9a04513c2f2d5f2f425fff8ad2ad4ca99844d3ad1c  /tmp/arai-radio-ghpages-20261123.zip' | sha256sum -c -
-          unzip -l /tmp/arai-radio-ghpages-20261123.zip
+          ls -lh ghpages-dir/arai-radio-ghpages-20261124.zip.part-*
+          cat ghpages-dir/arai-radio-ghpages-20261124.zip.part-* > /tmp/arai-radio-ghpages-20261124.zip
+          echo '99366bfe2859778014557695d0cc3675a5565a7365142a15db5bd2483b55059d  /tmp/arai-radio-ghpages-20261124.zip' | sha256sum -c -
+          unzip -l /tmp/arai-radio-ghpages-20261124.zip
           rm -rf /tmp/unpacked
           mkdir -p /tmp/unpacked
-          unzip -o /tmp/arai-radio-ghpages-20261123.zip -d /tmp/unpacked
+          unzip -o /tmp/arai-radio-ghpages-20261124.zip -d /tmp/unpacked
           TOP=$(find /tmp/unpacked -mindepth 1 -maxdepth 1 | wc -l)
           if [ "$TOP" = "1" ] && [ -d "$(find /tmp/unpacked -mindepth 1 -maxdepth 1)" ]; then
             ROOT=$(find /tmp/unpacked -mindepth 1 -maxdepth 1)
@@ -44,12 +44,12 @@ jobs:
           cd ghpages-dir
           find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
           cp -a "$ROOT"/. .
-          rm -f arai-radio-ghpages-20261123.zip.part-* arai-radio-ghpages-20261122.zip.part-* arai-radio-ghpages-20261122.zip
+          rm -f arai-radio-ghpages-20261124.zip.part-* arai-radio-ghpages-20261123.zip.part-* arai-radio-ghpages-20261123.zip
           echo '--- gh-pages files ---'
           find . -type f ! -path './.git/*' | sort
           git add -A -f
           git status --short
-          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Publish gh-pages from arai-radio-ghpages-20261123.zip'
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Publish gh-pages from arai-radio-ghpages-20261124.zip'
           git push origin gh-pages
           cd ..
           rsync -a --exclude='*.png' --exclude='*.PNG' --exclude='*.mp3' --exclude='*.MP3' --exclude='.nojekyll' --exclude='.github' "$ROOT"/ main-dir/
