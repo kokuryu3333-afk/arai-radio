@@ -27,7 +27,7 @@ jobs:
           set -euo pipefail
           ls -lh ghpages-dir/arai-radio-ghpages-20261124.zip.part-*
           cat ghpages-dir/arai-radio-ghpages-20261124.zip.part-* > /tmp/arai-radio-ghpages-20261124.zip
-          echo '99366bfe2859778014557695d0cc3675a5565a7365142a15db5bd2483b55059d  /tmp/arai-radio-ghpages-20261124.zip' | sha256sum -c -
+          echo '9d54b3bb5cb8933662a78aa6df2696b6ec33afc49bca4a63494b681de4d94f53  /tmp/arai-radio-ghpages-20261124.zip' | sha256sum -c -
           unzip -l /tmp/arai-radio-ghpages-20261124.zip
           rm -rf /tmp/unpacked
           mkdir -p /tmp/unpacked
@@ -44,6 +44,7 @@ jobs:
           cd ghpages-dir
           find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
           cp -a "$ROOT"/. .
+          rm -rf .github
           rm -f arai-radio-ghpages-20261124.zip.part-* arai-radio-ghpages-20261123.zip.part-* arai-radio-ghpages-20261123.zip
           echo '--- gh-pages files ---'
           find . -type f ! -path './.git/*' | sort
